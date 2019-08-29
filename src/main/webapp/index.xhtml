@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Project Name</title>
+	<meta name="author" content="The Author"></meta>
+</h:head>
+<h:body style="padding: 60px;">
+	<b:navBar brand="Project name" brandHref="#" fixed="top" inverse="true">
+		<b:navbarLinks>
+			<b:navLink value="Home" href="#"></b:navLink>
+			<b:navLink value="About" href="#about"></b:navLink>
+			<b:navLink value="Contact" href="#contact"></b:navLink>
+		</b:navbarLinks>
+	</b:navBar>
+	<b:container>
+	 
+
+		<b:dataTable value="#{userData.data}" var="deposit">
+			<b:dataTableColumn  label="Deposit" data-order="#{deposit.amount}" data-search="#{deposit.amount}">
+				<b:inputText value="#{deposit.amount}" size="7" validatorMessage="Wrong amount">
+					<f:validateDoubleRange minimum="0.0000000000000000001" />
+				</b:inputText>
+			</b:dataTableColumn>
+		</b:dataTable>
+	</b:container>
+
+</h:body>
+</html>
